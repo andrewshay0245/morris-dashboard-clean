@@ -5,16 +5,16 @@ export default function Dashboard() {
   const [data, setData] = useState({
     totalSchools: 294,
     totalCoaches: 7218,
-    completionRate: 19.2,
+    completionRate: 20.3,
     currentRate: 14.8,
-    eta: "NAIA Complete! D1 Phase by March 17, Canada expansion ready",
+    eta: "NAIA Complete! D1 Phase by March 17, Canada database loaded (107 institutions)",
     divisions: {
       D1: { completed: 52, total: 366, coaches: 4474 },
       D2: { completed: 0, total: 305, coaches: 0 },
       D3: { completed: 0, total: 429, coaches: 0 },
       NAIA: { completed: 242, total: 242, coaches: 2744 },
       U_SPORTS: { completed: 0, total: 58, coaches: 0 },
-      CCAA: { completed: 0, total: 131, coaches: 0 }
+      CCAA: { completed: 0, total: 49, coaches: 0 }
     },
     timeline: [],
     lastUpdated: new Date().toISOString()
