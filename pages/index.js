@@ -5,14 +5,16 @@ export default function Dashboard() {
   const [data, setData] = useState({
     totalSchools: 294,
     totalCoaches: 7218,
-    completionRate: 21.9,
+    completionRate: 19.2,
     currentRate: 14.8,
-    eta: "NAIA Complete! D1 Phase by March 17",
+    eta: "NAIA Complete! D1 Phase by March 17, Canada expansion ready",
     divisions: {
       D1: { completed: 52, total: 366, coaches: 4474 },
       D2: { completed: 0, total: 305, coaches: 0 },
       D3: { completed: 0, total: 429, coaches: 0 },
-      NAIA: { completed: 242, total: 242, coaches: 2744 }
+      NAIA: { completed: 242, total: 242, coaches: 2744 },
+      U_SPORTS: { completed: 0, total: 58, coaches: 0 },
+      CCAA: { completed: 0, total: 131, coaches: 0 }
     },
     timeline: [],
     lastUpdated: new Date().toISOString()
@@ -36,7 +38,7 @@ export default function Dashboard() {
     return () => clearInterval(interval);
   }, []);
 
-  const divisions = ['D1', 'D2', 'D3', 'NAIA'];
+  const divisions = ['D1', 'D2', 'D3', 'NAIA', 'U_SPORTS', 'CCAA'];
 
   return (
     <>
@@ -150,6 +152,18 @@ export default function Dashboard() {
               const divData = data.divisions[div];
               const percentage = divData.total > 0 ? (divData.completed / divData.total * 100) : 0;
               
+              let divLabel;
+              switch(div) {
+                case 'U_SPORTS':
+                  divLabel = 'U Sports (Canada Universities)';
+                  break;
+                case 'CCAA':
+                  divLabel = 'CCAA (Canada Colleges)';
+                  break;
+                default:
+                  divLabel = `NCAA ${div}`;
+              }
+              
               return (
                 <div key={div} style={{
                   margin: '20px 0',
@@ -159,7 +173,7 @@ export default function Dashboard() {
                   borderLeft: '4px solid #0d9488'
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                    <strong>NCAA {div}</strong>
+                    <strong>{divLabel}</strong>
                     <span>{divData.completed}/{divData.total} ({divData.coaches.toLocaleString()} coaches)</span>
                   </div>
                   <div style={{
@@ -193,4 +207,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-}// Force refresh Sun Mar 15 11:06:36 EDT 2026
+}
