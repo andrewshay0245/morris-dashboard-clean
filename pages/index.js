@@ -12,7 +12,7 @@ export default function Dashboard() {
       D1: { completed: 46, total: 366, coaches: 3884 },
       D2: { completed: 0, total: 305, coaches: 0 },
       D3: { completed: 0, total: 429, coaches: 0 },
-      NAIA: { completed: 0, total: 32, coaches: 0 }
+      NAIA: { completed: 0, total: 240, coaches: 0 }
     },
     timeline: [],
     lastUpdated: new Date().toISOString()
