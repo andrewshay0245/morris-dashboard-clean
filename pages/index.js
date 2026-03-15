@@ -3,16 +3,16 @@ import Head from 'next/head';
 
 export default function Dashboard() {
   const [data, setData] = useState({
-    totalSchools: 46,
-    totalCoaches: 3884,
-    completionRate: 4.0,
-    currentRate: 0.0,
-    eta: "Starting scraping engine...",
+    totalSchools: 294,
+    totalCoaches: 7218,
+    completionRate: 21.9,
+    currentRate: 14.8,
+    eta: "NAIA Complete! D1 Phase by March 17",
     divisions: {
-      D1: { completed: 46, total: 366, coaches: 3884 },
+      D1: { completed: 52, total: 366, coaches: 4474 },
       D2: { completed: 0, total: 305, coaches: 0 },
       D3: { completed: 0, total: 429, coaches: 0 },
-      NAIA: { completed: 0, total: 240, coaches: 0 }
+      NAIA: { completed: 242, total: 242, coaches: 2744 }
     },
     timeline: [],
     lastUpdated: new Date().toISOString()
